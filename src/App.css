@@ -1,32 +1,132 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: "Recoleta Bold";
+  src: url("/fonts/Recoleta/Recoleta Bold.otf") format("opentype");
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+@font-face {
+  font-family: "aileron";
+  src: url("/fonts/aileron/Aileron-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "aileron-bold";
+  src: url("/fonts/aileron/Aileron-Bold.otf") format("opentype");
+}
+
+.title {
+  font-family: "Recoleta Bold";
+  color: black;
+  position: relative; /* Ensure stacking context */
+  z-index: 2;
+  font-size: 6vw;
+}
+
+.subtitle {
+  font-family: "Recoleta Bold";
+  color: black;
+  font-size: 3vw;
+}
+
+.body-text {
+  font-family: "aileron";
+  color: black;
+  font-size: 20px;
+  position: relative; /* Ensure stacking context */
+  z-index: 2;
+}
+
+.bold {
+  font-family: "aileron-bold";
+  color: black;
+  font-size: 20px;
+  position: relative; /* Ensure stacking context */
+  z-index: 2;
+}
+
+.App {
+  text-align: center;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  position: relative;
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: transparent;
   min-height: 100vh;
-  display: flex;
+  display: block;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: 3vw;
+  position: relative;
+  z-index: 2;
+}
+
+.our-programs {
+  display: block;
+  padding-bottom: 250px;
+}
+.faqs {
+  display: block;
+}
+.footer {
+  display: block;
+  flex-direction: row;
+  padding-bottom: 10px;
+}
+.education {
+  display: flex; /* Make the container a flexbox */
+  flex-direction: row; /* Arrange items side by side */
+  width: 80%; /* Adjust width as needed */
+  justify-content: space-between; /* Optional: space out the items */
+  align-items: center; /* Align items vertically in the center */
+  padding-bottom: 350px;
+}
+
+.graphic {
+  height: 20%; /* Adjust as needed */
+  width: 20%;  /* Adjust as needed */
+  object-fit: cover; /* Ensure the image doesn't stretch */
+}
+
+.committee-paragraph {
+  margin-left: 350px; /* Add margin to the right to create space between the text and the image */
+  margin-right: 20%;
+  text-align: left; /* Align text to the left */
+}
+
+.background-image {
+  /*position: fixed;*/
+  position: absolute;
+  opacity: 1;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 120vh;
+  margin-left: -5%;
+  margin-top: -10%;
+  background-image: url("/RAISO-background.png");
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  transition: opacity 0.3s ease;
+  /* Ensure it renders */
+}
+
+.background-image.hidden {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  pointer-events: none; 
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer-text {
+  font-family: "aileron";
+  color: black;
+  font-size: 10px;
 }
